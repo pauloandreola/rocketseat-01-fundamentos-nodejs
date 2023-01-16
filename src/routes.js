@@ -29,4 +29,11 @@ export const routes = [
       return res.writeHead(201).end('User Created');
     }
   },
+  {
+    method: 'DELETE',
+    path: '/users/ID',
+    handler: (req, res) => {
+      return res.end('User deleted');
+    }
+  }
 ]
