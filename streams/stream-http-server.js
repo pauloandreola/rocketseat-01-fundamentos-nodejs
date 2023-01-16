@@ -15,7 +15,6 @@ const server = http.createServer(async(req, res) => {
   for await (const chunk of req) {
     buffers.push(chunk);
   }
-  console.log('teste');
   const fullStreamContent = Buffer.concat(buffers).toString();
   console.log(fullStreamContent);
   return res.end(fullStreamContent);
