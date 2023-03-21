@@ -145,10 +145,12 @@ Regex dos parâmetros /:([a-zA-Z]+)/g    -- regex = expressão irregular. Ou sej
 
 ## Capítulo 05 aula 04 - Rotas com parâmetros (RegEx)
 
-
 (?<id1>[a-z0-9\-_]+) - Nesse formato todo o campo regex vai retornar com a identificação id1 na frente.
 (?<$1>[a-z0-9\-_]+) - Nesse formato o campo regex trará o nome do campo antes da variável.
 
 ## Capítulo 05 aula 05 - Remoção de registros
 
-- 
+- Ajustando o server, para buscar o id do usuário para enviar para o endpoint/rota de deleção.
+- Criando o método delete no database, percorrendo na tabela users o id indicado para deletar. Se achar vai informar qual é o índice na tabela. Após remover ele persiste.
+- Na rota vai fazer a busca pelo id através do id passado pelo parâmetro chamando o método delete do database, retornando 204.
+
