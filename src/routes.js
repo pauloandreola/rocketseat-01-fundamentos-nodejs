@@ -14,6 +14,7 @@ export const routes = [
       return res.end(JSON.stringify(users));
     }
   },
+
   {
     method: 'POST',
     path: buildRoutePath('/users'),
@@ -30,15 +31,32 @@ export const routes = [
       return res.writeHead(201).end('User Created');
     }
   },
+
   {
     method: 'DELETE',
     path: buildRoutePath('/users/:id'),
     handler: (req, res) => {
-      const { id }= req.params;
+      const { id } = req.params;
 
       database.delete('users', id);
 
       return res.writeHead(204).end();
     }
-  }
+  },
+
+  {
+    method: 'PUT',
+    path: buildRoutePath('/users/:id'),
+    handler: (req, res) => {
+      const { id } = req.params;
+      const { name, email } = req.body;
+
+      database.update('users', id, {
+        name,
+        email
+      });
+
+      return res.writeHead(204).end();
+    }
+  },
 ]
