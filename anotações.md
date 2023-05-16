@@ -164,3 +164,7 @@ Regex dos parâmetros /:([a-zA-Z]+)/g    -- regex = expressão irregular. Ou sej
 - No arquivo build-route-path criando uma query após o "path with params" (?<query>\\?(.*))?$ toda regex começa com ponto de interrogação. com isso busco tudo que tem as duas barras inversas servem para escapar do ponto de interrogação. Com o ponto o o asterisco pego tudo que vem depois do ponto de interrogação.
 - No arquivo server faremos a seguinte inclusão: Após o if e const routeParams um console.log(extractQueryParams(routeParams.groups.query)).
 Com isso vai rodando o método get no Insomnia e na aba query colocando os parâmetros de name = search e value = Paulo vai aparecer { search: 'Paulo' } no terminal
+
+## Capítulo 05 aula 08 - Filtrando lista do banco de dados
+
+- 
