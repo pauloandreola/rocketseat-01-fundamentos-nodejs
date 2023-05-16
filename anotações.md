@@ -154,7 +154,13 @@ Regex dos parâmetros /:([a-zA-Z]+)/g    -- regex = expressão irregular. Ou sej
 - Criando o método delete no database, percorrendo na tabela users o id indicado para deletar. Se achar vai informar qual é o índice na tabela. Após remover ele persiste.
 - Na rota vai fazer a busca pelo id através do id passado pelo parâmetro chamando o método delete do database, retornando 204.
 
-## Capítulo 05 aula 05 - Atualização de registros
+## Capítulo 05 aula 06 - Atualização de registros
 
 - Criando método de atualização de usuário.
 - Criando o método PUT no routes file e update no database.
+
+## Capítulo 05 aula 07 - Capturando query parameters
+
+- No arquivo build-route-path criando uma query após o "path with params" (?<query>\\?(.*))?$ toda regex começa com ponto de interrogação. com isso busco tudo que tem as duas barras inversas servem para escapar do ponto de interrogação. Com o ponto o o asterisco pego tudo que vem depois do ponto de interrogação.
+- No arquivo server faremos a seguinte inclusão: Após o if e const routeParams um console.log(extractQueryParams(routeParams.groups.query)).
+Com isso vai rodando o método get no Insomnia e na aba query colocando os parâmetros de name = search e value = Paulo vai aparecer { search: 'Paulo' } no terminal
